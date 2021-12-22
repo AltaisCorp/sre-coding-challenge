@@ -28,4 +28,4 @@ terraform destroy
 
 Time is an Ilussion 
 
-Total time for the test: 10 Hours. 
+Total time for the test: 10 Hours.
