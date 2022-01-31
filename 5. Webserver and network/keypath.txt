@@ -1,0 +1,2 @@
+ssh-keygen -t rsa -b 2048
+/home/kop/altair-sre-chanllenge/keyfile/altais_key
