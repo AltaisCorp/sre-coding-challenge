@@ -5,7 +5,7 @@ variable "region" {
 
 variable "challenge_name" {
   description = "challenge name"
-  default     = "srec-ds"
+  default     = "sre-ds"
 }
 
 variable "customer" {

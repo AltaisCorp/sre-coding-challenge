@@ -2,5 +2,5 @@
 .terraform
 .vscode
 .terraform.lock.hcl
-.terraform.state*
+terraform.tfstate*
 

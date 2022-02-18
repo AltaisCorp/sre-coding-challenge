@@ -1,9 +1,3 @@
-resource "random_string" "unique" {
-  length  = 4
-  upper   = false
-  special = false
-}
-
 module "s3_tfstate_bucket_vpc" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "2.9.0"
@@ -11,7 +5,7 @@ module "s3_tfstate_bucket_vpc" {
   acl                     = "private"
   block_public_acls       = true
   block_public_policy     = true
-  bucket                  = "${local.name}-vpc-tf-state-${random_string.unique.id}"
+  bucket                  = "${local.name}-vpc-tf-state"
   ignore_public_acls      = true
   restrict_public_buckets = true
   tags                    = local.common_tags
@@ -35,7 +29,7 @@ module "s3_tfstate_bucket_s3_notification" {
   acl                     = "private"
   block_public_acls       = true
   block_public_policy     = true
-  bucket                  = "${local.name}-s3-notification-terraform-state-${random_string.unique.id}"
+  bucket                  = "${local.name}-s3-notification-terraform-state"
   ignore_public_acls      = true
   restrict_public_buckets = true
   tags                    = local.common_tags
