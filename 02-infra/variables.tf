@@ -5,7 +5,7 @@ variable "name" {
 
 variable "customer" {
   description = "customer name"
-  default     = "altaiscorp"
+  default     = "altais"
 }
 
 variable "region" {

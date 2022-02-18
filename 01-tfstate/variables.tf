@@ -10,5 +10,5 @@ variable "challenge_name" {
 
 variable "customer" {
   description = "customer name"
-  default     = "atlaiscorp"
+  default     = "altais"
 }
