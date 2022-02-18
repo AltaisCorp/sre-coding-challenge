@@ -1,14 +1,14 @@
 variable "region" {
   description = "AWS region"
-  default = "us-west-2"
+  default     = "us-west-2"
 }
 
 variable "challenge_name" {
   description = "challenge name"
-  default = "sre-challenge"
+  default     = "srec-ds"
 }
 
 variable "customer" {
   description = "customer name"
-  default = "atlaiscorp"
+  default     = "atlaiscorp"
 }
