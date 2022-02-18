@@ -3,7 +3,7 @@ resource "aws_sns_topic" "s3_object_upload_sns_topic" {
 }
 
 resource "aws_sns_topic_policy" "my_sns_topic_policy" {
-  arn = aws_sns_topic.s3_object_upload_sns_topic.arn
+  arn    = aws_sns_topic.s3_object_upload_sns_topic.arn
   policy = data.aws_iam_policy_document.s3_object_upload_sns_policy_document.json
 }
 
@@ -22,14 +22,14 @@ data "aws_iam_policy_document" "s3_object_upload_sns_policy_document" {
         local.account_id,
       ]
     }
-    
+
 
     effect = "Allow"
 
     condition {
       test     = "ArnLike"
       variable = "aws:SourceArn"
-      values   = [
+      values = [
         "${module.s3_notification.s3_bucket_arn}"
       ]
     }

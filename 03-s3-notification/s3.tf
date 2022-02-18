@@ -21,11 +21,11 @@ module "s3_notification" {
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  depends_on   = [aws_sns_topic.s3_object_upload_sns_topic]
-  bucket = module.s3_notification.s3_bucket_id
+  depends_on = [aws_sns_topic.s3_object_upload_sns_topic]
+  bucket     = module.s3_notification.s3_bucket_id
 
   topic {
-    topic_arn     = aws_sns_topic.s3_object_upload_sns_topic.arn
-    events        = ["s3:ObjectCreated:*"]
+    topic_arn = aws_sns_topic.s3_object_upload_sns_topic.arn
+    events    = ["s3:ObjectCreated:*"]
   }
 }

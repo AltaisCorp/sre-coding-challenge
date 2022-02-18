@@ -1,5 +1,5 @@
 
-   
+
 terraform {
   required_version = "~> v1.0.0"
   required_providers {
@@ -9,9 +9,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "srec-s3-notification-terraform-state"
-    key    = "terraform.tfstate"
-    region = "us-west-2"
+    bucket         = "srec-s3-notification-terraform-state"
+    key            = "terraform.tfstate"
+    region         = "us-west-2"
     dynamodb_table = "srec-s3-notification-terraform-state-lock-ddb"
   }
 }
