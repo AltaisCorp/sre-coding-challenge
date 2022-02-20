@@ -1,4 +1,4 @@
-# 02-infra
+# Task-04_2_infra
 
 ## Description
 
@@ -9,3 +9,5 @@ Deploys:
 - 1 x public subnet
 - 1 x sg for ingress/egress for web
 - 1 x ec2 apache web server
+
+# Task-04_2_infra
