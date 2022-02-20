@@ -9,7 +9,7 @@ import (
 func TestTerraformTFstate(t *testing.T) {
 	// retryable errors in terraform testing.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../01-tfstate",
+		TerraformDir: "../Task-04_1_state",
 	})
 
 	defer terraform.Destroy(t, terraformOptions)

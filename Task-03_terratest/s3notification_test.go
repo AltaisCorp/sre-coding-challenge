@@ -9,7 +9,7 @@ import (
 func TestTerraformS3Notification(t *testing.T) {
 	// retryable errors in terraform testing.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../03-s3-notification",
+		TerraformDir: "../Task-01-02_s3_notification",
 	})
 
 	defer terraform.Destroy(t, terraformOptions)
