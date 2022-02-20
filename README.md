@@ -45,7 +45,7 @@ Instructions to test:
 - Create the VPC, IGW, Route Table, Subnet, Security Group and EC2 instance running Apache
 
 ### Task-05_diagram
-
+![Task-05_diagram](https://github.com/AltaisCorp/sre-coding-challenge/blob/sre-challenge-ds/Task-05_diagram/Atlais_SRE_Challenge.png?raw=true)
 
 ### Task-06_k8s
 

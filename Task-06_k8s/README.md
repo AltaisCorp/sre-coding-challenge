@@ -20,10 +20,7 @@ This repo will deploy ArgoCD (GitOps CD Tool) which will download and deploy a G
 username: admin
 password: <password_from_output_of_last_command
 ```  
-
+![argocd](https://github.com/AltaisCorp/sre-coding-challenge/blob/sre-challenge-ds/Task-06_k8s/images/argocd.png?raw=true)
 
 ```10) kubectl -n guestbook port-forward service/guestbook-ui 8080:80```  
-
-
-
-
+![guestbook](https://github.com/AltaisCorp/sre-coding-challenge/blob/sre-challenge-ds/Task-06_k8s/images/guestbook.png?raw=true)
