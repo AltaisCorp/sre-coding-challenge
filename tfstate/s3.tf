@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform-state" {
-  bucket        = "${var.tf-state-bucket-name}-tfstate"
+  bucket        = "${var.tf-state-bucket-name}"
   force_destroy = false
   policy        = data.aws_iam_policy_document.tfstate_s3_bucket_policy.json
 
@@ -23,7 +23,8 @@ data "aws_iam_policy_document" "tfstate_s3_bucket_policy" {
     effect = "Allow"
 
     actions = [
-      "s3:*",
+      "s3:PutObject",
+      "s3:PutObjectAcl"
     ]
 
     principals {
@@ -32,8 +33,8 @@ data "aws_iam_policy_document" "tfstate_s3_bucket_policy" {
     }
 
     resources = [
-      "arn:aws:s3:::${var.tf-state-bucket-name}-tfstate",
-      "arn:aws:s3:::${var.tf-state-bucket-name}-tfstate/*",
+      "arn:aws:s3:::${var.tf-state-bucket-name}",
+      "arn:aws:s3:::${var.tf-state-bucket-name}/*",
     ]
 
   }
