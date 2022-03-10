@@ -78,8 +78,19 @@ Basically what this unit test does is checking if the s3-id output is equals as 
 ![email](images/email.png "email")
 
 
-### Architecture of webServer deployment
+### Architecture of webServer deployment:
+
 ![diagram](images/diagram.png "diagram")
+
+### Additional evidence:
+
+Using session manager to connect to one of the instances and with the curl command to the ALB DNS (AWS) port 80, it can be noticed an http 200 code is responded.
+
+![webServerworking](images/webServerworking.png "webServerworking")
+
+Healthy targets of the alb target group:
+
+![healthyTargets](images/healthyTargets.png "healthyTargets")
 
 ## Author
 
