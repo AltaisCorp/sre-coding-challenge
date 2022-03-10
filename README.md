@@ -77,6 +77,10 @@ Basically what this unit test does is checking if the s3-id output is equals as 
 
 ![email](images/email.png "email")
 
+
+### Architecture of webServer deployment
+![diagram](images/diagram.png "diagram")
+
 ## Author
 
 ex. Juan Felipe Reyes Marlés  
