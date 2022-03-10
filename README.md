@@ -75,7 +75,7 @@ ok      github.com/jfr992/sre-coding-challenge  12.037s
 
 Basically what this unit test does is checking if the s3-id output is equals as the bucket-name, check if the bucket exists and uploads a random *.txt file to test the sns-s3-bucket-notification:
 
-![email](images/img.png "email")
+![email](images/email.png "email")
 
 ## Author
 
