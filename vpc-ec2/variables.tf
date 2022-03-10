@@ -3,6 +3,21 @@ variable "vpc_cidr_block" {
   description = "cidr for vpc"
 }
 
+variable "public_cidr" {
+  type        = string
+  description = "public_cidr"
+}
+
+variable "private_1_cidr" {
+  type        = string
+  description = "private_1_cidr"
+}
+
+variable "private_2_cidr" {
+  type        = string
+  description = "private_2_cidr"
+}
+
 variable "az-id-1" {
   type        = string
   description = "availability zone 1"

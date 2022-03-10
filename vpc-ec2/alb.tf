@@ -38,17 +38,23 @@ resource "aws_lb_target_group" "tg" {
 }
 
 resource "aws_security_group" "alb" {
-  name_prefix = "alb-webserver"
+
+  name        = "sg alb"
+  description = "Allow http inbound traffic"
   vpc_id      = aws_vpc.main.id
 
-}
+  ingress {
+    description = "allow TCP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks  = var.alb_allowed_ingress_cidrs
+  }
 
-resource "aws_security_group_rule" "alb_in_80" {
-  type              = "ingress"
-  security_group_id = aws_security_group.alb.id
-
-  protocol    = "tcp"
-  from_port   = 80
-  to_port     = 80
-  cidr_blocks = var.alb_allowed_ingress_cidrs
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
