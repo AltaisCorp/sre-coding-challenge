@@ -3,13 +3,13 @@ resource "aws_s3_bucket" "s3" {
   acl    = "private"
   policy = data.aws_iam_policy_document.allow_access.json
 
-  # server_side_encryption_configuration {
-  #   rule {
-  #     apply_server_side_encryption_by_default {
-  #       sse_algorithm = "AES256"
-  #     }
-  #   }
-  # }
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
 }
 #private bucket
 resource "aws_s3_bucket_public_access_block" "s3_block" {
