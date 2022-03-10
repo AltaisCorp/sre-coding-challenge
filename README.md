@@ -92,6 +92,74 @@ Healthy targets of the alb target group:
 
 ![healthyTargets](images/healthyTargets.png "healthyTargets")
 
+### Helm Microservice
+
+To install the hello-world web app using helm, in the microservice directory:
+
+```
+helm dep up .
+helm install microservice .
+```
+![helminstall](images/helminstall.png "helminstall")
+
+List the application: check the chart version and app version defined in the Chart.yaml file
+
+```
+helm list
+
+juan.reyes@Juan-Reyes-MacBook-Pro microservice % helm list
+NAME        	NAMESPACE	REVISION	UPDATED                            	STATUS  	CHART             	APP VERSION
+microservice	default  	1       	2022-03-10 08:20:36.81221 -0500 -05	deployed	microservice-0.1.0	1.0.0
+juan.reyes@Juan-Reyes-MacBook-Pro microservice %
+
+```
+
+check that everything defined in the values file is correct:
+
+deployment,sa,hpa,pods
+
+```
+kubectl get deploy
+
+juan.reyes@Juan-Reyes-MacBook-Pro microservice % kubectl get  deploy
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+microservice   1/1     1            1           2m43s
+juan.reyes@Juan-Reyes-MacBook-Pro microservice %
+
+kubectl get sa
+
+juan.reyes@Juan-Reyes-MacBook-Pro microservice % kubectl get  sa
+NAME           SECRETS   AGE
+default        1         33m
+microservice   1         3m15s
+juan.reyes@Juan-Reyes-MacBook-Pro microservice %
+
+kubectl get hpa ---> it needs metric server installed in your cluster to work properly
+
+juan.reyes@Juan-Reyes-MacBook-Pro microservice % kubectl get hpa
+NAME           REFERENCE                 TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+microservice   Deployment/microservice   <unknown>/80%   1         2         1          3m33s
+juan.reyes@Juan-Reyes-MacBook-Pro microservice %
+
+
+kubectl get pods
+
+
+juan.reyes@Juan-Reyes-MacBook-Pro microservice % kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+microservice-69c866479f-44bll   1/1     Running   0          4m15s
+juan.reyes@Juan-Reyes-MacBook-Pro microservice %
+
+
+
+Run the following command if you want to check the hello-world page:
+
+ k port-forward <pod-name> 8080:80
+
+```
+
+![helloworld](images/helloworld.png "helloworld")
+
 ## Author
 
 ex. Juan Felipe Reyes Marlés  
