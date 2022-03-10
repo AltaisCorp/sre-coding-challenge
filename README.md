@@ -84,7 +84,7 @@ Basically what this unit test does is checking if the s3-id output is equals as 
 
 ### Additional evidence:
 
-Using session manager to connect to one of the instances and with the curl command to the ALB DNS (AWS) port 80, it can be noticed an http 200 code is responded.
+Using session manager to connect to one of the instances and with the curl command to the ALB DNS (AWS) port 80, it can be noticed a http 200 code (ok)
 
 ![webServerworking](images/webServerworking.png "webServerworking")
 
