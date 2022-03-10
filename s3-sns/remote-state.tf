@@ -7,9 +7,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket               = "challenge-s3-tfstate"
-    region               = "us-east-2"
-    key                  = "terraform.tfstate"
-    dynamodb_table       = "challenge-s3-tfstate-terraform-lock"
+    bucket         = "challenge-s3-tfstate"
+    region         = "us-east-2"
+    key            = "s3-sns/terraform.tfstate"
+    dynamodb_table = "challenge-s3-tfstate-terraform-lock"
   }
 }
